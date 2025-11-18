@@ -49,15 +49,14 @@ public class Matrix {
     System.out.println();
   }
 
-  // Flip matrix along diagonal (top-right → bottom-left)
   public void flipMatrix() {
     for (int row = 0; row < size; row++) {
       for (int col = 0; col < size; col++) {
-        // Skip diagonal
+
         if (row + col == size - 1) {
           continue;
         }
-        // Only swap elements on *one* side of diagonal to prevent undoing swaps
+
         if (row + col < size - 1) {
           int targetRow = size - row - 1;
           int targetCol = size - col - 1;
